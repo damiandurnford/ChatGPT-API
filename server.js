@@ -34,13 +34,9 @@ app.post('/chat', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-=======
-app.listen(3000, () => console.log('🚀 Server running on http://localhost:3000'));
->>>>>>> ee1aea0fb3666db4a42c6b84779ae8053064c364
