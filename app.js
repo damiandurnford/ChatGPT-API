@@ -15,8 +15,8 @@ document.getElementById('userInput').addEventListener('keydown', function (event
 });
 
 function appendMessage(sender, text) {
-  let color = sender === 'You' ? 'lightgreen' : 'sandybrown';
-  chatLog.innerHTML += `<div style="background-color:${color}; padding:5px; line-height: 20px;     border-radius: 6px; width: 90%">${text}</div><br>`;
+  let color = sender === 'You' ? 'lightgreen' : 'indigo';
+  chatLog.innerHTML += `<div style="background-color:${color}; padding:5px; line-height: 20px; border-radius: 6px; width: 90%">${text}</div><br>`;
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
@@ -31,7 +31,8 @@ document.querySelectorAll('.choice').forEach(btn => {
 async function sendMessage(message) {
   // Add inline thinking indicator
   const thinkingDiv = document.createElement('div');
-  thinkingDiv.style.backgroundColor = 'sandybrown';
+  thinkingDiv.style.backgroundColor = 'indigo';
+  thinkingDiv.style.color = 'white';
   thinkingDiv.style.padding = '5px';
   thinkingDiv.style.marginLeft = '10%';
   thinkingDiv.style.lineHeight = '20px';
@@ -56,7 +57,8 @@ async function sendMessage(message) {
 
   // Append actual AI response character by character
   const aiDiv = document.createElement('div');
-  aiDiv.style.backgroundColor = 'sandybrown';
+  aiDiv.style.backgroundColor = 'indigo';
+  aiDiv.style.color = 'white';
   aiDiv.style.padding = '5px';
   aiDiv.style.marginLeft = '10%';
   aiDiv.style.lineHeight = '20px';

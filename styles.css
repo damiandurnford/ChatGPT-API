@@ -80,9 +80,6 @@ button {
     }
 }
 
-.thinkingDiv {
-    border-radius: 6px;
-}
 
 .choice {
     margin: 3px 0;
@@ -90,6 +87,7 @@ button {
     width: 35px;
     height: 30px;
     color: blue;
+    color: indigo
 }
 
 .emojis {
