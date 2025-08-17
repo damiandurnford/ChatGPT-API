@@ -84,9 +84,24 @@ async function sendMessage(message) {
 // PWA: Register Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('Service Worker registered:', reg))
-      .catch(err => console.log('Service Worker registration failed:', err));
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+      console.log('SW registered:', reg);
+
+      // Force it to check for updates on load
+      reg.update();
+
+      // Optional: Listen for updates becoming available
+      reg.onupdatefound = () => {
+        const newWorker = reg.installing;
+        newWorker.onstatechange = () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('New version available 🚀');
+            // Optionally reload automatically:
+            window.location.reload();
+          }
+        };
+      };
+    });
   });
 }
 
