@@ -55,7 +55,7 @@ button {
     color: lightgoldenrodyellow;
     float: left;
     margin-left: 20px;
-    margin-top: -5px;
+    margin-top: 0;
 }
 
 #chatLog {
