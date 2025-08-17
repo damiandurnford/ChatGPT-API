@@ -1,2 +1,2 @@
-# chatgpt-api-demo
+# tchAIkovsky
 Simple ChatGPT API demo web app.
