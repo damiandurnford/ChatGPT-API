@@ -20,7 +20,6 @@ function appendMessage(sender, text) {
   chatLog.scrollTop = chatLog.scrollHeight;
 }
 
-// Handle choice buttons (1, 2, 3)
 document.querySelectorAll('.choice').forEach(btn => {
   btn.addEventListener('click', () => {
     const choice = btn.textContent.trim();
@@ -39,8 +38,10 @@ async function sendMessage(message) {
   thinkingDiv.textContent = 'THINKING 💬';
   thinkingDiv.style.borderRadius = '6px';
   thinkingDiv.style.animation = 'pulse 1s infinite';
+  thinkingDiv.style.marginBottom = '30px';
   chatLog.appendChild(thinkingDiv);
   chatLog.scrollTop = chatLog.scrollHeight;
+  window.scrollTo(0, document.body.scrollHeight);
 
   const response = await fetch('/chat', {
     method: 'POST',
@@ -57,10 +58,10 @@ async function sendMessage(message) {
   const aiDiv = document.createElement('div');
   aiDiv.style.backgroundColor = 'sandybrown';
   aiDiv.style.padding = '5px';
-  aiDiv.style.marginLeft = '10%';  
+  aiDiv.style.marginLeft = '10%';
   aiDiv.style.lineHeight = '20px';
   aiDiv.style.borderRadius = '6px';
-  aiDiv.style.marginBottom = '50px'; 
+  aiDiv.style.marginBottom = '30px';
   chatLog.appendChild(aiDiv);
 
   const text = `${data.reply}`;
@@ -71,7 +72,8 @@ async function sendMessage(message) {
       aiDiv.textContent += text.charAt(i);
       i++;
       chatLog.scrollTop = chatLog.scrollHeight;
-      setTimeout(typeChar, .1); // 30ms per character
+      window.scrollTo(0, document.body.scrollHeight);
+      setTimeout(typeChar, .1); // 
     }
   }
 
@@ -87,3 +89,8 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.log('Service Worker registration failed:', err));
   });
 }
+
+// Auto-send "Hi" from AI on startup
+window.addEventListener('DOMContentLoaded', () => {
+  sendMessage("Hi");
+});
