@@ -33,7 +33,6 @@ button {
     background-color: teal;
     color: lightgoldenrodyellow;
     margin: 5px 5px 5px 0;
-
 }
 
 .dark-toggle {
@@ -56,7 +55,7 @@ button {
     color: lightgoldenrodyellow;
     float: left;
     margin-left: 20px;
-    margin-top: 0;
+    margin-top: -5px;
 }
 
 #chatLog {
@@ -86,8 +85,7 @@ button {
     padding: 0;
     width: 35px;
     height: 30px;
-    color: blue;
-    color: indigo
+    color: indigo;
 }
 
 .emojis {
@@ -111,7 +109,7 @@ button {
     background-color: crimson;
     width: 100%;
     text-align: right;
-    height: 40px;
+    height: 50px;
     position: fixed;
     bottom: 0px;
 }
