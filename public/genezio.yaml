@@ -1,0 +1,22 @@
+name: tchaikovsky
+region: us-east-1
+yamlVersion: 2
+projectType: fullstack-js
+frontend:
+    path: frontend
+    buildCommand: npm run build
+    publish: build
+    subdomain: tchaikovsky
+backend:
+    path: backend
+    functions:
+        - entry: server.js
+          handler: handler
+          name: express
+          type: httpServer
+    language:
+        name: js
+        runtime: nodejs20.x
+    scripts:
+        deploy:
+            - npm install
