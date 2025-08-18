@@ -46,3 +46,14 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+
+// Update version button text from manifest.json
+fetch('./manifest.json')
+  .then(response => response.json())
+  .then(manifest => {
+    const versionBtn = document.querySelector('.version');
+    if (versionBtn && manifest.version) {
+      versionBtn.textContent = `(v${manifest.version})`;
+    }
+  })
+  .catch(err => console.error('Could not load manifest.json', err));

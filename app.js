@@ -107,6 +107,30 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Force update when clicking the version button
+const versionBtn = document.querySelector('.version');
+if (versionBtn) {
+  versionBtn.addEventListener('click', () => {
+    if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage('skipWaiting');
+      window.location.reload(); // reload immediately to get new assets
+    } else {
+      window.location.reload();
+    }
+  });
+}
+
+// Update version button text from manifest.json
+fetch('./manifest.json')
+  .then(response => response.json())
+  .then(manifest => {
+    const versionBtn = document.querySelector('.version');
+    if (versionBtn && manifest.version) {
+      versionBtn.textContent = `(v${manifest.version})`;
+    }
+  })
+  .catch(err => console.error('Could not load manifest.json', err));
+
 // Auto-send "Hi" from AI on startup
 window.addEventListener('DOMContentLoaded', () => {
   sendMessage("Hi");

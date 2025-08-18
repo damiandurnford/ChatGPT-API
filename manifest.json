@@ -1,6 +1,7 @@
 {
   "name": "tchAIkovsky",
   "short_name": "tchAIkovsky",
+  "version": "0.91",  
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",

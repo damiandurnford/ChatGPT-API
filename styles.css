@@ -35,16 +35,9 @@ button {
     margin: 5px 5px 5px 0;
 }
 
-.dark-toggle {
-    font-size: 20px;
-    padding: 0;
-    background: none;
-    border: none;
-    margin-right: 20px;
-    margin-top: 2px;
-}
 
-.dark-toggle:hover {
+
+#darkModeBtn:hover {
     transform: rotate(20deg) scale(1.2);
 }
 
@@ -53,9 +46,22 @@ button {
     font-size: 20px;
     letter-spacing: 5px;
     color: lightgoldenrodyellow;
-    float: left;
-    margin-left: 20px;
-    margin-top: 0;
+    text-align: center;
+
+}
+
+.version {
+    font-size: 16px;
+    color: black;
+    letter-spacing: 0px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: crimson;
+}
+
+.version:hover {
+    color: lightgoldenrodyellow;
 }
 
 #chatLog {
@@ -109,7 +115,30 @@ button {
     background-color: crimson;
     width: 100%;
     text-align: right;
-    height: 45px;
+    height: 40px;
     position: fixed;
     bottom: 0px;
+
+}
+
+#menuBtn {
+    font-size: 20px;
+    border: none;
+    position: fixed;
+    bottom: 2px;
+    left: 10px;
+    background-color: crimson;
+}
+
+#menuBtn:hover {
+    transform: rotate(20deg) scale(1.2);
+}
+
+#darkModeBtn {
+    font-size: 20px;
+    border: none;
+    position: fixed;
+    bottom: 2px;
+    right: 10px;
+    background-color: crimson;
 }
