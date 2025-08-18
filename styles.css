@@ -115,7 +115,7 @@ button {
     background-color: crimson;
     width: 100%;
     text-align: right;
-    height: 40px;
+    height: 45px;
     position: fixed;
     bottom: 0px;
 
@@ -126,7 +126,7 @@ button {
     border: none;
     position: fixed;
     bottom: 2px;
-    left: 10px;
+    left: 15px;
     background-color: crimson;
 }
 
@@ -139,6 +139,6 @@ button {
     border: none;
     position: fixed;
     bottom: 2px;
-    right: 10px;
+    right: 15px;
     background-color: crimson;
 }
