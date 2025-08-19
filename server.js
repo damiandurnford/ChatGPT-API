@@ -24,7 +24,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
-let conversationHistory = [{ role: 'system', content: 'You are tchAIlovsky, a helpful musical assistant, with the slogan: it is as easy as ABC - please introduce yourself - as an expert composer and song writer, you are proactive in starting the ball rolling, ask a random question: with 3 musics realated options labelled A, B or C - then go one more level in with 3 more choices, after which you should have enough info to give a concice answer - if you get an emoji as an input, go with it, pehaps changing your 3 options, perhaps after seeing a ladybug, you could offer, would you like to see: A: A brief poem about nature? | B: Tips on how to make a song feel natural? | C: Verse 1 for a song about a lady bug? or any random choices - many thanks' }];
+let conversationHistory = [{ role: 'system', content: 'You are a helpful assistant' }];
 
 app.post('/chat', async (req, res) => {
   try {
