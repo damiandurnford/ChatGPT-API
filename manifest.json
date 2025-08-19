@@ -1,11 +1,11 @@
 {
-  "name": "tchAIkovsky",
-  "short_name": "tchAIkovsky",
-  "version": "0.92",  
+  "name": "tchAIkovskyBE",
+  "short_name": "tchAIkovskyBE",
+  "version": "0.94",  
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#111111",
+  "background_color": "#DC143C",
+  "theme_color": "#DC143C",
   "icons": [
     {
       "src": "icons/icon-192.png",
